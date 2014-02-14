@@ -84,7 +84,7 @@ class App(object):
         current_poll = self.adapter.get_current_poll(number)
         while (current_poll):
             Logger.log(current_poll)
-            print current_poll["question"]
+            # print current_poll["question"]
             if current_poll['type'] != 'none':
                 user_response = self.get_input(": ")
                 post_response = self.adapter.respond_to_poll(number, current_poll, user_response)
@@ -97,5 +97,5 @@ class App(object):
 
 
 if __name__ == "__main__":
-    app = App("test", "nakulabye", "http://ec2-54-254-217-91.ap-southeast-1.compute.amazonaws.com/api/v1/ureporters")
+    app = App("test", "nakulabye", "http://2.2.2.2/api/v1/ureporters")
     app.start()
